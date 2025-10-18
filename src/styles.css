@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small custom styles */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* blob floating animation */
+@keyframes floatY {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-20px); }
+  100% { transform: translate(-50%, -50%) translateY(0); }
+}
+
+.blob-float {
+  animation-name: floatY;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* helper utilities for durations (can be overridden inline) */
+.blob-dur-slow { animation-duration: 18s; }
+.blob-dur-medium { animation-duration: 12s; }
+.blob-dur-fast { animation-duration: 8s; }
+
+/* small transition for opacity/transform changes */
+.blob-transition { transition: opacity 600ms ease, transform 600ms ease; }
