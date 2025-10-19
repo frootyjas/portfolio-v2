@@ -13,29 +13,32 @@ export default function Header({ dark, setDark }: HeaderProps) {
           JE
         </div>
         <nav className="flex items-center gap-6">
-          <ul className="flex gap-6">
-            <li>
-              <a href="#home" className="text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#skills" className="text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium">
-                Skills
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium">
-                Contact
-              </a>
-            </li>
-          </ul>
           <button
             onClick={() => setDark(!dark)}
-            aria-label="Toggle dark mode"
-            className="ml-4 px-3 py-1 rounded-full bg-gray-100 dark:bg-slate-700 text-sm"
+            aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="ml-4 p-2 rounded-full text-sm flex items-center justify-center hover:scale-110 transition-transform"
           >
-            {dark ? 'Light' : 'Dark'}
+            {/* screen reader label */}
+            <span className="sr-only">{dark ? 'Switch to light mode' : 'Switch to dark mode'}</span>
+            {dark ? (
+              // sun icon for light mode (visible when currently dark)
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-yellow-400">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2"></path>
+                <path d="M12 20v2"></path>
+                <path d="M4.93 4.93l1.41 1.41"></path>
+                <path d="M17.66 17.66l1.41 1.41"></path>
+                <path d="M2 12h2"></path>
+                <path d="M20 12h2"></path>
+                <path d="M4.93 19.07l1.41-1.41"></path>
+                <path d="M17.66 6.34l1.41-1.41"></path>
+              </svg>
+            ) : (
+              // moon icon for dark mode (visible when currently light)
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-gray-800 dark:text-gray-200">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+              </svg>
+            )}
           </button>
         </nav>
       </div>

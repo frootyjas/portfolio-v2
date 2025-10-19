@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Badges from './components/Badges'
+import SocialFloating from './components/SocialFloating'
 
 export default function App() {
   const [dark, setDark] = useState<boolean>(() => {
@@ -24,6 +25,14 @@ export default function App() {
       try { localStorage.setItem('theme', 'light') } catch {}
     }
   }, [dark])
+
+  // back-to-top visibility
+  const [showTop, setShowTop] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 300)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <div className={`${dark ? 'dark' : ''}`}>
@@ -112,13 +121,29 @@ export default function App() {
     })
   })()}
 
-      <Header dark={dark} setDark={setDark} />
+  <Header dark={dark} setDark={setDark} />
+  <SocialFloating />
       <main className="container mx-auto p-6 relative z-10">
         <Hero />
         <Skills />
         <Projects />
         <Badges />
       </main>
+
+      <footer className="relative z-10 mt-12 text-center py-6 text-sm text-gray-600 dark:text-gray-300">
+        <div className="container mx-auto">© {new Date().getFullYear()} Jasmine Enriquez — Built with React + Tailwind</div>
+      </footer>
+
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+        className={`fixed right-6 bottom-6 z-50 p-3 rounded-full shadow-lg bg-white/90 dark:bg-slate-800/80 text-gray-800 dark:text-gray-100 transition-opacity transform ${showTop ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+          <path d="M12 19V6"></path>
+          <path d="M5 12l7-7 7 7"></path>
+        </svg>
+      </button>
     </div>
     </div>
   )

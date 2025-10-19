@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 const projects = [
   {
     number: '01',
-    title: 'E-Commerce Platform',
-    description: 'A full-stack online shopping platform with real-time inventory management, payment integration, and responsive design. Built with React, Node.js, and MongoDB.',
+    title: 'GradeTrackr: Student Grade Viewer',
+    description: 'React-based application for students to securely view their grades online with role-based access.',
     tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     images: [
       'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop',
@@ -15,9 +15,9 @@ const projects = [
   },
   {
     number: '02',
-    title: 'Task Management Dashboard',
-    description: 'An intuitive project management tool featuring drag-and-drop functionality, team collaboration, and real-time updates. Designed with modern UI/UX principles.',
-    tags: ['TypeScript', 'React', 'Tailwind', 'Firebase'],
+    title: 'CaféEase: Online Ordering & Loyalty',
+    description: 'A web-based platform where customers can order online and earn loyalty points for every purchase.',
+    tags: ['PHP', 'Tailwind CSS', 'JavaScript', 'MySQL'],
     images: [
       'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop',
       'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=500&fit=crop',
@@ -27,9 +27,9 @@ const projects = [
   },
   {
     number: '03',
-    title: 'Portfolio Website Builder',
-    description: 'A no-code platform allowing creatives to build stunning portfolio websites with customizable templates and drag-and-drop editor.',
-    tags: ['React', 'CSS3', 'Node.js', 'PostgreSQL'],
+    title: 'Badminton Reservation System',
+    description: 'A web-based application for managing badminton court reservations, allowing users to book courts, view availability, and manage their bookings.',
+    tags: ['React', 'Tailwind CSS', 'TypeScript', 'Supabase'],
     images: [
       'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=500&fit=crop',
       'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&h=500&fit=crop',

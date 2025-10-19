@@ -24,9 +24,9 @@ export default function Skills() {
               Tech Stack
             </span>
           </div>
-          <h3 className="text-4xl font-bold mb-4 text-gray-800">
-            Skills
-          </h3>
+              <h2 className="text-4xl font-bold mb-4 text-gray-800">
+                Technical Proficiencies
+              </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             From design to deployment, here are the technologies I use daily to build exceptional digital experiences
           </p>
